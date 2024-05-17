@@ -1,12 +1,14 @@
-FROM node:latest
+FROM ubuntu:latest
+RUN apt update
+RUN apt install -y nginx
+CMD ["nginx","-g","daemon off"]
+# WORKDIR /usr/src/app
 
-WORKDIR /usr/src/app
+# COPY package*.json ./
 
-COPY package*.json ./
+# RUN npm install
 
-RUN npm install
+# COPY . .
 
-COPY . .
-
-EXPOSE 3000
-CMD [ "node", "index.js" ]
+# EXPOSE 3000
+# CMD [ "node", "index.js" ]
