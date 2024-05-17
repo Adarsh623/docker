@@ -1,7 +1,7 @@
 pipeline{
 
-	agent {label 'linux'}
-
+	//agent {label 'linux'}
+	agent 'docker'
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('adarsh623-docker')
 	}
